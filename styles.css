@@ -1,0 +1,368 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    /* background: #121212; */
+    background: black;
+    color: #e0e0e0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background: linear-gradient(180deg, #1e1e1e, #333);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.sidebar.hidden {
+    transform: translateX(-250px);
+}
+
+.sidebar h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #bb86fc;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(187, 134, 252, 0.8);
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #e0e0e0;
+    font-size: 18px;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+}
+
+.sidebar ul li a:hover {
+    background: linear-gradient(90deg, #bb86fc, #00ff00);
+    color: #121212;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+}
+
+.sidebar ul li a.active {
+    background: linear-gradient(90deg, #bb86fc, #00ff00);
+    color: #121212;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    height: 100%;
+    overflow-y: auto;
+    transition: margin-left 0.3s ease;
+    background: linear-gradient(135deg, #121212, #1e1e1e);
+}
+
+.main-content.shifted {
+    margin-left: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 255, 255, 0.3);
+    border: 2px solid rgba(0, 255, 255, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+    transform: scale(1.01);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 255, 255, 0.5);
+}
+
+h1 {
+    text-align: center;
+    color: #bb86fc;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(187, 134, 252, 0.8);
+}
+
+/* Metrics Row */
+/* Metrics Row */
+#metrics-row {
+    display: flex;
+    justify-content: space-around; /* Distribute items evenly */
+    align-items: center; /* Vertically align items */
+    margin: 20px 0;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05); /* Semi-transparent background */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 255, 255, 0.3); /* Glow effect */
+}
+
+.metric-container, .status-container {
+    text-align: center;
+    width: 20%; /* Equal width for each metric */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+}
+
+.metric-container p, .status-container p {
+    font-size: 16px;
+    color: #e0e0e0;
+    margin-bottom: 10px;
+}
+
+.progress-meter {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    transform: rotate(-90deg);
+    transform-origin: center;
+    filter: drop-shadow(0 0 8px #00ff00); /* Glow effect */
+}
+
+.meter-bg,
+.meter-progress {
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.9s ease;
+}
+
+.meter-bg {
+    stroke-dasharray: 283;
+    stroke-dashoffset: 0;
+    stroke: rgba(255, 255, 255, 0.2); /* Background stroke */
+}
+
+.meter-progress {
+    stroke-dasharray: 283;
+    stroke-dashoffset: 283;
+    stroke-width: 6;
+}
+
+.meter-value {
+    dominant-baseline: middle;
+    text-anchor: middle;
+    font-size: 14px;
+    fill: white;
+    transform: rotate(90deg); /* Counteracts the SVG's rotation */
+    transform-origin: 50% 50%; /* Center rotation */
+}
+
+.status-indicator {
+    padding: 10px 20px;
+    background: transparent;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid #e0e0e0;
+    border-radius: 25px;
+    min-width: 100px;
+    max-width: 150px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.8); /* Glow effect */
+    transition: 
+        border-color 0.3s ease, 
+        color 0.3s ease, 
+        width 0.6s ease-in-out,
+        padding 0.3s ease;
+}
+/* Loading state for status indicator */
+/* Loading state for status indicator */
+.status-indicator.loading {
+    border-color: #bb86fc; /* Purple border */
+    color: #bb86fc; /* Purple text */
+    box-shadow: 0 0 10px rgba(187, 134, 252, 0.8); /* Neon glow effect */
+    animation: pulse 1.5s infinite; /* Pulsing animation */
+}
+
+/* Pulsing animation for loading state */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 10px rgba(187, 134, 252, 0.8);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(187, 134, 252, 1);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(187, 134, 252, 0.8);
+    }
+}
+
+.status-indicator.normal {
+    border-color: #00ff00;
+    color: #e0e0e0;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+.status-indicator.warning {
+    border-color: #ffcc00;
+    color: black;
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+}
+
+.status-indicator.anomaly {
+    border-color: #ff0000;
+    color: white;
+    background: rgba(255, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+/* Suggestions and Anomalies Section */
+/* Suggestions and Anomalies Section */
+#suggestions, #anomalies {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(0, 255, 255, 0.3);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 255, 255, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#suggestions:hover, #anomalies:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 255, 255, 0.5);
+}
+
+#suggestions h2, #anomalies h2 {
+    color: #bb86fc;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    text-align: center;
+    position: relative;
+    text-shadow: 0 0 10px rgba(187, 134, 252, 0.8);
+}
+
+#suggestions h2::after, #anomalies h2::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 80px;
+    height: 2px;
+    background: #00ff00;
+    transform: translateX(-50%);
+}
+
+/* Styling for list items in Suggestions and Anomalies */
+#suggestions-list, #anomalies-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+    text-align: center;
+    max-width: 400px;
+    font-family: 'Orbitron', sans-serif; /* Futuristic font */
+}
+
+#suggestions-list li, #anomalies-list li {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #e0e0e0;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.8); /* Neon glow effect */
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Hover effect for list items */
+#suggestions-list li:hover, #anomalies-list li:hover {
+    color: #00ff00;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+}
+
+/* Color coding for anomalies */
+#anomalies-list li.anomaly {
+    color: #ff0000;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+}
+
+/* Loading state styling */
+#suggestions-list li.loading, #anomalies-list li.loading {
+    color: #bb86fc;
+    text-shadow: 0 0 10px rgba(187, 134, 252, 0.8);
+}
+
+/* Status Section */
+p strong {
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.8); /* Neon glow effect */
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    font-size: 16px;
+    color: #e0e0e0;
+    margin-right: 10px; /* Space between label and value */
+}
+p strong:hover {
+    color: #00ff00; /* Green glow on hover */
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+}
+
+#anomaly-status {
+    font-family: 'Orbitron', sans-serif; /* Futuristic font */
+    font-size: 16px;
+    font-weight: bold;
+    color: #bb86fc; /* Default status color */
+    text-shadow: 0 0 5px rgba(187, 134, 252, 0.8); /* Neon glow effect */
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Hover effect for status */
+#anomaly-status:hover {
+    color: #00ff00; /* Green glow on hover */
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+}
+
+/* Color coding for anomaly status */
+#anomaly-status.normal {
+    color: #00ff00; /* Green for normal */
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.8);
+}
+
+#anomaly-status.warning {
+    color: #ffcc00; /* Yellow for warning */
+    text-shadow: 0 0 5px rgba(255, 204, 0, 0.8);
+}
+
+#anomaly-status.anomaly {
+    color: #ff0000; /* Red for anomaly */
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.8);
+}
+
+/* Loading state styling */
+#anomaly-status.loading {
+    color: #bb86fc; /* Purple for loading */
+    text-shadow: 0 0 10px rgba(187, 134, 252, 0.8);
+}
+
