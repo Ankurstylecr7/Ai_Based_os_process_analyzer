@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyberpunk Dashboard</title>
+    <title>Vampire Dashboard</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,7 +11,7 @@
     <div class="sidebar" id="sidebar">
         <h2>System Metrics</h2>
         <ul>
-            <li><a href="#" class="active" onclick="showSection('overview')">Overview</a></li>
+            <li><a href="#" class="active" onclick="showSection('overview')" aria-label="View System Overview">Overview</a></li>
         </ul>
     </div>
 
@@ -26,9 +26,9 @@
                 <!-- CPU Meter -->
                 <div class="metric-container" data-type="cpu">
                     <p><strong>CPU Usage:</strong></p>
-                    <svg class="progress-meter" viewBox="0 0 100 100">
-                        <circle class="meter-bg" cx="50" cy="50" r="45" fill="transparent" stroke="#333" stroke-width="4"/>
-                        <circle class="meter-progress" cx="50" cy="50" r="45" fill="transparent" stroke-width="6"/>
+                    <svg class="progress-meter" viewBox="0 0 200 200">
+                        <circle class="meter-bg" cx="100" cy="100" r="90" fill="transparent" stroke="#333" stroke-width="8"/>
+                        <circle class="meter-progress" cx="100" cy="100" r="90" fill="transparent" stroke-width="12"/>
                         <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" class="meter-value">0%</text>
                     </svg>
                 </div>
@@ -36,9 +36,9 @@
                 <!-- Memory Meter -->
                 <div class="metric-container" data-type="memory">
                     <p><strong>Memory Usage:</strong></p>
-                    <svg class="progress-meter" viewBox="0 0 100 100">
-                        <circle class="meter-bg" cx="50" cy="50" r="45" fill="transparent" stroke="#333" stroke-width="4"/>
-                        <circle class="meter-progress" cx="50" cy="50" r="45" fill="transparent" stroke-width="6"/>
+                    <svg class="progress-meter" viewBox="0 0 200 200">
+                        <circle class="meter-bg" cx="100" cy="100" r="90" fill="transparent" stroke="#333" stroke-width="8"/>
+                        <circle class="meter-progress" cx="100" cy="100" r="90" fill="transparent" stroke-width="12"/>
                         <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" class="meter-value">0%</text>
                     </svg>
                 </div>
@@ -46,9 +46,9 @@
                 <!-- Disk Meter -->
                 <div class="metric-container" data-type="disk">
                     <p><strong>Disk Usage:</strong></p>
-                    <svg class="progress-meter" viewBox="0 0 100 100">
-                        <circle class="meter-bg" cx="50" cy="50" r="45" fill="transparent" stroke="#333" stroke-width="4"/>
-                        <circle class="meter-progress" cx="50" cy="50" r="45" fill="transparent" stroke-width="6"/>
+                    <svg class="progress-meter" viewBox="0 0 200 200">
+                        <circle class="meter-bg" cx="100" cy="100" r="90" fill="transparent" stroke="#333" stroke-width="8"/>
+                        <circle class="meter-progress" cx="100" cy="100" r="90" fill="transparent" stroke-width="12"/>
                         <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" class="meter-value">0%</text>
                     </svg>
                 </div>
