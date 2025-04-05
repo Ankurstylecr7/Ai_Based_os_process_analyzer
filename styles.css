@@ -7,9 +7,8 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    /* background: #121212; */
-    background: black;
-    color: #e0e0e0;
+    background: #000000; /* Black background */
+    color: #ffffff; /* White text */
     height: 100vh;
     overflow: hidden;
 }
@@ -21,8 +20,8 @@ body {
     left: 0;
     width: 250px;
     height: 100%;
-    background: linear-gradient(180deg, #1e1e1e, #333);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(180deg, #330000, #000000); /* Dark red to black */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7), 0 0 20px rgba(255, 0, 0, 0.6); /* Red glow shadow */
     z-index: 1000;
     padding: 20px;
     transition: transform 0.3s ease;
@@ -36,10 +35,10 @@ body {
     font-size: 24px;
     margin-bottom: 20px;
     text-align: center;
-    color: #bb86fc;
+    color: #ff0000; /* Blood red */
     text-transform: uppercase;
     letter-spacing: 2px;
-    text-shadow: 0 0 10px rgba(187, 134, 252, 0.8);
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.8); /* Red glow */
 }
 
 .sidebar ul {
@@ -52,26 +51,26 @@ body {
 
 .sidebar ul li a {
     text-decoration: none;
-    color: #e0e0e0;
+    color: #ffffff; /* White text */
     font-size: 18px;
     padding: 10px 15px;
     display: block;
     border-radius: 5px;
     transition: background 0.3s ease, transform 0.3s ease;
-    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.5); /* Subtle red glow */
 }
 
 .sidebar ul li a:hover {
-    background: linear-gradient(90deg, #bb86fc, #00ff00);
-    color: #121212;
+    background: linear-gradient(90deg, #ff0000, #8b0000); /* Red gradient */
+    color: #ffffff; /* White text */
     transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.8); /* Stronger red glow */
 }
 
 .sidebar ul li a.active {
-    background: linear-gradient(90deg, #bb86fc, #00ff00);
-    color: #121212;
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+    background: linear-gradient(90deg, #ff0000, #8b0000); /* Red gradient */
+    color: #ffffff; /* White text */
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.8); /* Stronger red glow */
 }
 
 /* Main Content */
@@ -81,7 +80,7 @@ body {
     height: 100%;
     overflow-y: auto;
     transition: margin-left 0.3s ease;
-    background: linear-gradient(135deg, #121212, #1e1e1e);
+    background: linear-gradient(135deg, #000000, #1e1e1e); /* Black gradient */
 }
 
 .main-content.shifted {
@@ -91,63 +90,58 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.05); /* Semi-transparent white */
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 255, 255, 0.3);
-    border: 2px solid rgba(0, 255, 255, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7), 0 0 20px rgba(255, 0, 0, 0.6); /* Red glow shadow */
+    border: 2px solid rgba(255, 0, 0, 0.3); /* Red border */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .container:hover {
     transform: scale(1.01);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 255, 255, 0.5);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7), 0 0 30px rgba(255, 0, 0, 0.8); /* Stronger red glow */
 }
 
 h1 {
     text-align: center;
-    color: #bb86fc;
+    color: #ff0000; /* Blood red */
     margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    text-shadow: 0 0 10px rgba(187, 134, 252, 0.8);
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.8); /* Red glow */
 }
 
-/* Metrics Row */
 /* Metrics Row */
 #metrics-row {
     display: flex;
-    justify-content: space-around; /* Distribute items evenly */
-    align-items: center; /* Vertically align items */
+    justify-content: space-around;
+    align-items: center;
     margin: 20px 0;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.05); /* Semi-transparent background */
+    background: rgba(255, 255, 255, 0.05); /* Semi-transparent white */
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 255, 255, 0.3); /* Glow effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7), 0 0 20px rgba(255, 0, 0, 0.6); /* Red glow shadow */
 }
 
-.metric-container, .status-container {
+.metric-container {
     text-align: center;
-    width: 20%; /* Equal width for each metric */
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center items horizontally */
-    justify-content: center; /* Center items vertically */
+    width: 25%; /* Adjusted width to accommodate larger circles */
 }
 
-.metric-container p, .status-container p {
-    font-size: 16px;
-    color: #e0e0e0;
-    margin-bottom: 10px;
+.metric-container p {
+    font-size: 18px; /* Slightly larger font for better readability */
+    color: #ffffff;
+    margin-bottom: 15px;
 }
 
 .progress-meter {
-    width: 80px;
-    height: 80px;
+    width: 160px; /* Increased width */
+    height: 160px; /* Increased height */
     margin: 0 auto;
     transform: rotate(-90deg);
     transform-origin: center;
-    filter: drop-shadow(0 0 8px #00ff00); /* Glow effect */
+    filter: drop-shadow(0 0 12px #ff0000); /* Enhanced red glow */
 }
 
 .meter-bg,
@@ -157,87 +151,96 @@ h1 {
 }
 
 .meter-bg {
-    stroke-dasharray: 283;
+    stroke-dasharray: 565.48; /* New circumference = 2 * π * 90 */
     stroke-dashoffset: 0;
-    stroke: rgba(255, 255, 255, 0.2); /* Background stroke */
+    stroke: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
 }
 
 .meter-progress {
-    stroke-dasharray: 283;
-    stroke-dashoffset: 283;
-    stroke-width: 6;
+    stroke-dasharray: 565.48; /* New circumference = 2 * π * 90 */
+    stroke-dashoffset: 565.48; /* Full circle offset */
+    stroke-width: 12; /* Increased stroke width */
 }
 
 .meter-value {
     dominant-baseline: middle;
     text-anchor: middle;
-    font-size: 14px;
+    font-size: 20px; /* Larger font size for percentage */
     fill: white;
-    transform: rotate(90deg); /* Counteracts the SVG's rotation */
-    transform-origin: 50% 50%; /* Center rotation */
+    transform: rotate(90deg);
+    transform-origin: 50% 50%;
+}
+/* Status Indicator */
+.status-container {
+    text-align: center;
+    width: 25%; /* Adjusted width for better alignment */
+}
+
+.status-container p {
+    font-size: 18px; /* Slightly larger font for labels */
+    color: #ffffff; /* White text */
+    margin-bottom: 15px;
 }
 
 .status-indicator {
-    padding: 10px 20px;
+    padding: 15px 30px; /* Increased padding for larger size */
     background: transparent;
     display: inline-block;
-    font-size: 16px;
+    font-size: 20px; /* Larger font size for status text */
     font-weight: bold;
     text-align: center;
-    border: 2px solid #e0e0e0;
-    border-radius: 25px;
-    min-width: 100px;
-    max-width: 150px;
+    border: 3px solid #ffffff; /* Thicker border for visibility */
+    border-radius: 30px; /* Rounded corners for a pill-like shape */
+    min-width: 150px; /* Increased minimum width */
+    max-width: 200px; /* Increased maximum width */
     overflow: hidden;
     white-space: nowrap;
-    text-shadow: 0 0 5px rgba(0, 255, 255, 0.8); /* Glow effect */
-    transition: 
-        border-color 0.3s ease, 
-        color 0.3s ease, 
-        width 0.6s ease-in-out,
-        padding 0.3s ease;
-}
-/* Loading state for status indicator */
-/* Loading state for status indicator */
-.status-indicator.loading {
-    border-color: #bb86fc; /* Purple border */
-    color: #bb86fc; /* Purple text */
-    box-shadow: 0 0 10px rgba(187, 134, 252, 0.8); /* Neon glow effect */
-    animation: pulse 1.5s infinite; /* Pulsing animation */
-}
-
-/* Pulsing animation for loading state */
-@keyframes pulse {
-    0% {
-        box-shadow: 0 0 10px rgba(187, 134, 252, 0.8);
-    }
-    50% {
-        box-shadow: 0 0 20px rgba(187, 134, 252, 1);
-    }
-    100% {
-        box-shadow: 0 0 10px rgba(187, 134, 252, 0.8);
-    }
+    text-shadow: 0 0 8px rgba(255, 0, 0, 0.8); /* Stronger red glow */
+    transition: border-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
 .status-indicator.normal {
-    border-color: #00ff00;
-    color: #e0e0e0;
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    border-color: #00ff00; /* Green border */
+    color: #ffffff; /* White text */
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.8); /* Green glow */
 }
 
 .status-indicator.warning {
-    border-color: #ffcc00;
-    color: black;
-    box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+    border-color: #ffcc00; /* Yellow border */
+    color: #ffffff; /* White text */
+    box-shadow: 0 0 15px rgba(255, 204, 0, 0.8); /* Yellow glow */
 }
 
 .status-indicator.anomaly {
-    border-color: #ff0000;
-    color: white;
-    background: rgba(255, 0, 0, 0.1);
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    border-color: #ff0000; /* Red border */
+    color: #ffffff; /* White text */
+    background: rgba(255, 0, 0, 0.2); /* Subtle red background */
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.8); /* Strong red glow */
 }
-/* Suggestions and Anomalies Section */
+
+.status-indicator.loading {
+    border-color: #ffffff; /* White border for loading state */
+    color: #ffffff; /* White text */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* White glow */
+    animation: pulse 1.5s infinite; /* Pulsing animation for loading */
+}
+
+/* Pulse Animation for Loading State */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
 /* Suggestions and Anomalies Section */
 #suggestions, #anomalies {
     display: flex;
@@ -246,27 +249,27 @@ h1 {
     flex-direction: column;
     margin-top: 20px;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 2px solid rgba(0, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.05); /* Semi-transparent white */
+    border: 2px solid rgba(255, 0, 0, 0.3); /* Red border */
     border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 255, 255, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7), 0 0 20px rgba(255, 0, 0, 0.6); /* Red glow shadow */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 #suggestions:hover, #anomalies:hover {
     transform: scale(1.02);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 255, 255, 0.5);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7), 0 0 30px rgba(255, 0, 0, 0.8); /* Stronger red glow */
 }
 
 #suggestions h2, #anomalies h2 {
-    color: #bb86fc;
+    color: #ff0000; /* Blood red */
     font-size: 24px;
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 15px;
     text-align: center;
     position: relative;
-    text-shadow: 0 0 10px rgba(187, 134, 252, 0.8);
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.8); /* Red glow */
 }
 
 #suggestions h2::after, #anomalies h2::after {
@@ -276,93 +279,27 @@ h1 {
     left: 50%;
     width: 80px;
     height: 2px;
-    background: #00ff00;
+    background: #ff0000; /* Red underline */
     transform: translateX(-50%);
 }
 
-/* Styling for list items in Suggestions and Anomalies */
 #suggestions-list, #anomalies-list {
     list-style: none;
     padding: 0;
     margin-top: 10px;
     text-align: center;
     max-width: 400px;
-    font-family: 'Orbitron', sans-serif; /* Futuristic font */
 }
 
 #suggestions-list li, #anomalies-list li {
     margin: 10px 0;
     font-size: 16px;
-    color: #e0e0e0;
-    text-shadow: 0 0 5px rgba(0, 255, 255, 0.8); /* Neon glow effect */
+    color: #ffffff; /* White text */
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.8); /* Red glow */
     transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-/* Hover effect for list items */
 #suggestions-list li:hover, #anomalies-list li:hover {
-    color: #00ff00;
-    text-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+    color: #ff0000; /* Blood red */
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.8); /* Strong red glow */
 }
-
-/* Color coding for anomalies */
-#anomalies-list li.anomaly {
-    color: #ff0000;
-    text-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
-}
-
-/* Loading state styling */
-#suggestions-list li.loading, #anomalies-list li.loading {
-    color: #bb86fc;
-    text-shadow: 0 0 10px rgba(187, 134, 252, 0.8);
-}
-
-/* Status Section */
-p strong {
-    text-shadow: 0 0 5px rgba(0, 255, 255, 0.8); /* Neon glow effect */
-    transition: color 0.3s ease, text-shadow 0.3s ease;
-    font-size: 16px;
-    color: #e0e0e0;
-    margin-right: 10px; /* Space between label and value */
-}
-p strong:hover {
-    color: #00ff00; /* Green glow on hover */
-    text-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
-}
-
-#anomaly-status {
-    font-family: 'Orbitron', sans-serif; /* Futuristic font */
-    font-size: 16px;
-    font-weight: bold;
-    color: #bb86fc; /* Default status color */
-    text-shadow: 0 0 5px rgba(187, 134, 252, 0.8); /* Neon glow effect */
-    transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-/* Hover effect for status */
-#anomaly-status:hover {
-    color: #00ff00; /* Green glow on hover */
-    text-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
-}
-
-/* Color coding for anomaly status */
-#anomaly-status.normal {
-    color: #00ff00; /* Green for normal */
-    text-shadow: 0 0 5px rgba(0, 255, 0, 0.8);
-}
-
-#anomaly-status.warning {
-    color: #ffcc00; /* Yellow for warning */
-    text-shadow: 0 0 5px rgba(255, 204, 0, 0.8);
-}
-
-#anomaly-status.anomaly {
-    color: #ff0000; /* Red for anomaly */
-    text-shadow: 0 0 5px rgba(255, 0, 0, 0.8);
-}
-
-/* Loading state styling */
-#anomaly-status.loading {
-    color: #bb86fc; /* Purple for loading */
-    text-shadow: 0 0 10px rgba(187, 134, 252, 0.8);
-}
-
